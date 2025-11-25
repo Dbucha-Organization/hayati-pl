@@ -4,11 +4,11 @@
   box-sizing: border-box;
 }
 :root {
-  --my-color-one: #b33791;
+  /* --my-color-one: #b33791;
   --my-color-two: #c562af;
   --my-color-three: #db8dd0;
   --my-color-four: #fec5f6;
-  --text-coor: white;
+  --text-coor: white; */
 }
 
 body {
@@ -18,6 +18,23 @@ body {
     var(--my-color-four) 100%
   );
   color: var(--text-color);
+  /* background-image: url("img/ChatOn\ image.jpg"); */
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit:cover;
+        background: linear-gradient(135deg, rgb(0, 0, 0), rgb(43, 41, 43), #ff0, #0ff);
+    
+    /* плавный переход цветов */
+    background-size: 400% 400%;
+
+    /* анимация движения градиента */
+    animation: gradientShift 15s ease infinite;
+
+    /* чтобы градиент занимал весь экран */
+    min-height: 100vh;
+    margin: 0;
+  
 }
 
 /* age modal */
@@ -94,7 +111,7 @@ button {
 /* NavBars section */
 .nav-bar {
   position: relative;
-  background-color: var(--my-color-one);
+  background-color: fff;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -111,7 +128,7 @@ button {
 }
 
 .nav-bar a {
-  color: #1d1f21;
+  color: #ffffff;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -149,7 +166,7 @@ button {
 .hamburger .line {
   height: 4px;
   width: 100%;
-  background: #001a1a;
+  background: #ffffff;
   border-radius: 4px;
   transition: 0.35s ease;
 }
@@ -173,7 +190,7 @@ button {
   left: 50%;
   height: 0;
   width: 0;
-  background: var(--my-color-one);
+  background-color: #001a1a;
   padding: 20px 0;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
   display: flex;
@@ -187,7 +204,7 @@ button {
 .hamburger-content a {
   text-decoration: none;
   font-size: 20px;
-  color: #001a1a;
+  color: #00ffff;
 }
 
 .hamburger-content.active {
@@ -196,6 +213,898 @@ button {
   width: 100%;
   top: 70px; /*70px navbari tak*/
 }
+
+
+
+/* стиль слайда */
+
+.carousel {
+  position: relative;
+  /* height: 700px; */
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Трек со слайдами */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Отдельный слайд */
+.carousel-slide {
+  min-width: 100%;
+  position: relative;
+  opacity: 0.5;
+  transition: opacity 0.5s ease;
+}
+
+
+.carousel-slide h1 {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+}
+
+.carousel-slide h1 a {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 2px;
+    padding: 15px 35px;
+    border-radius: 25px;
+
+    /* Неоновый градиент */
+    background: linear-gradient(45deg, #0ee0f7, #056ce1, #d931ff, #7cadee);
+    background-size: 400% 400%;
+
+    /* Пульсация градиента */
+    animation: gradientPulse 6s ease infinite;
+
+    /* Glow и дымка */
+    text-shadow: 0 0 10px #0ee0f7,
+                 0 0 20px #056ce1,
+                 0 0 35px  #d931ff;
+
+    position: relative;
+    z-index: 10;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Анимация градиента */
+@keyframes gradientPulse {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Hover эффект */
+.carousel-slide h1 a:hover {
+    transform: scale(1.15) rotate(-1deg);
+    text-shadow: 0 0 25px rgb(65, 255, 227, 1),
+                 0 0 40px rgba(0, 255, 255, 1),
+                 0 0 60px rgba(30, 235, 108, 1);
+}
+
+/* Лёгкая дымка вокруг кнопки через псевдоэлемент */
+.carousel-slide h1 a::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    border-radius: 25
+}
+
+
+/* Пульсация — теперь ярче */
+@keyframes neonPulse {
+    0%, 100% {
+        text-shadow:
+            0 0 10px rgba(255, 255, 255, 1),
+            0 0 24px rgba(0, 153, 255, 1),
+            0 0 42px rgba(0, 153, 255, 1),
+            0 0 70px rgba(0, 153, 255, 1);
+    }
+    50% {
+        text-shadow:
+            0 0 18px rgba(255, 255, 255, 1),
+            0 0 36px rgba(0, 153, 255, 1),
+            0 0 60px rgba(0, 153, 255, 1),
+            0 0 90px rgba(255, 255, 255, 1);
+    }
+}
+
+/* движение градиента */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 2/1;
+  object-fit: cover;
+}
+
+/* .dbucha-hayati{
+  width: 600px;
+} */
+
+/* Подпись слайда */
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Кнопки навигации */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-btn.prev {
+  left: 15px;
+}
+
+.carousel-btn.next {
+  right: 15px;
+}
+
+/* Индикаторы (точки) */
+.carousel-indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.carousel-indicator:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.carousel-indicator.active {
+  background: white;
+  width: 30px;
+  border-radius: 6px;
+}
+
+
+
+.container {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.image-box {
+    flex: 1;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Наведение - неоновый бордер */
+.image-box:hover::after {
+    border-color: #0ff; /* яркий неоновый цвет */
+    
+    transform: scale(1.05); /* чуть увеличиваем для эффекта “подсветки” */
+}
+
+/* Немного увеличиваем саму картинку при наведении для динамики */
+.image-box:hover img {
+    transform: scale(1.05);
+    transition: transform 0.4s ease;
+}
+
+
+
+
+.slide-desc{
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+/* ----------------------------------------- */
+.slide-desc h1  {
+    font-size: 20px;
+    font-weight: 400px;
+    width: max-content;
+    color: #fff;
+    margin: 0 auto;
+    text-decoration: none;
+    /* letter-spacing: 2px; */
+    padding: 15px 35px;
+    border-radius: 25px;
+
+    /* Неоновый градиент */
+    background: linear-gradient(45deg, #0ee0f7, #056ce1, #d931ff, #7cadee);
+    background-size: 400% 400%;
+
+    /* Пульсация градиента */
+    animation: gradientPulse 6s ease infinite;
+
+    /* Glow и дымка */
+    text-shadow: 0 0 10px #0ee0f7,
+                 0 0 20px #056ce1,
+                 0 0 35px  #d931ff;
+
+    position: relative;
+    z-index: 10;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Анимация градиента */
+@keyframes gradientPulse {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+
+.slider-container-header {
+    text-align: center;
+    padding: 35px 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    /* Эффект подсветки */
+    background: transparent;
+}
+
+.slider-container-header h1 a {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 2px;
+
+    /* Свечение */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transition: 0.4s ease;
+}
+
+.slider-container-header h1 a:hover {
+    color: #7ab8ff;
+    text-shadow: 0 0 30px rgba(122, 184, 255, 0.8);
+    transform: scale(1.05);
+}
+
+.slider-container-header h3 {
+    font-size: 1.3rem;
+    margin-top: 5px;
+    color: #d8eaff;
+    font-weight: 400;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    transition: 0.3s ease;
+}
+
+.slider-container-header h3:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+
+.slider-container {
+    max-width: 1200px;
+    min-width: 320px;
+    margin: 40px auto;
+    background: transparent;
+    border-radius: 12px;
+  
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+    overflow: hidden;
+    overflow-x: auto;
+    
+    
+}
+
+.slider-container::-webkit-scrollbar {
+    height: 10px;
+}
+
+.slider-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.slider-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #2196f3, #21cbf3);
+    border-radius: 10px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
+
+
+
+.slider-wrapper {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+/* .slide {
+  position: relative;
+    min-width: 350px;
+    padding: 10px;
+ transition: transform 0.3s ease, box-shadow 0.3s ease;
+} */
+
+.slide {
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 10px;
+    min-width: 350px;
+}
+
+/* Анимация при наведении */
+.slide:hover {
+    transform: translateY(-10px) scale(1.03); /* лёгкое поднятие + увеличение */
+    box-shadow: 0 15px 30px rgba(6, 96, 250, 0.4), /* неоновая тень */
+                0 10px 20px rgba(0, 47, 255, 0.3);
+    filter: brightness(1.1); /* лёгкое осветление */
+}
+
+/* Дополнительно: псевдо-элемент для ауры glow */
+.slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    box-shadow: 0 0 0 rgba(0,255,255,0);
+    transition: box-shadow 0.4s ease;
+    pointer-events: none;
+}
+
+.slide:hover::after {
+    box-shadow: 0 0 20px rgba(0,255,255,0.5),
+                0 0 40px rgba(0,255,255,0.3),
+                0 0 60px rgba(0,255,255,0.2);
+}
+
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    border: 3px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+       background-color: #ddd;
+}
+
+.slide-desc a{
+  text-decoration: none;
+}
+/* .slide:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(8, 6, 6, 0.25);
+} */
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.arrow:hover:not(:disabled) {
+    background: #f0f0f0;
+    border-color: #999;
+}
+
+.arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.arrow-left {
+    left: 10px;
+}
+
+.arrow-right {
+    right: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #2196f3;
+    width: 0%;
+    transition: width 0.4s ease;
+    border-radius: 3px;
+}
+
+
+
+
+
+.contact-section {
+    padding: 80px 20px;
+    /* background: linear-gradient(135deg, #0ff, #6a0dad, #2291e6); */
+    color: #fff;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(255,255,255,0.05), transparent 70%);
+    z-index: 0;
+}
+
+.contact-title {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+    z-index: 1;
+    position: relative;
+    text-shadow: 0 0 15px rgba(255,255,255,0.5),
+                 0 0 30px rgba(0,255,255,0.7),
+                 0 0 45px rgba(106,13,173,0.6);
+}
+
+.contact-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    z-index: 1;
+    position: relative;
+}
+
+.contact-item {
+    background: rgba(0,0,0,0.3);
+    border-radius: 20px;
+    padding: 30px;
+    flex: 1 1 250px;
+    max-width: 300px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,255,255,0.3), 0 0 30px rgba(255,65,108,0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 40px rgba(0,255,255,0.6), 0 0 60px rgba(255,65,108,0.5);
+}
+
+.contact-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #6a0dad;
+}
+
+.contact-item p {
+    font-size: 1rem;
+    color: #fff;
+    line-height: 1.6;
+    color: #ff416c;
+}
+
+.contact-item a {
+    color: #ff416c;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px #ff416c, 0 0 10px #ff416c;
+}
+
+.contact-item a:hover {
+    color: #0ff;
+    text-shadow: 0 0 15px #0ff, 0 0 30px #6a0dad;
+}
+
+
+
+ .container_video {    
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 30px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .video-label {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 20px 0;
+
+    text-align: center;
+
+    /* Плавное появление */
+    transition: all 0.35s ease;
+    z-index: 3;
+}
+
+.video-label h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.video-label h2 a {
+  font-size: 20px;
+    font-weight: 400px;
+    width: max-content;
+    color: #fff;
+    margin: 0 auto;
+    text-decoration: none;
+    /* letter-spacing: 2px; */
+    padding: 15px 35px;
+    border-radius: 25px;
+
+    /* Неоновый градиент */
+    background: linear-gradient(45deg, #0ee0f7, #056ce1, #d931ff, #7cadee);
+    background-size: 400% 400%;
+
+    /* Пульсация градиента */
+    animation: gradientPulse 6s ease infinite;
+
+    /* Glow и дымка */
+    text-shadow: 0 0 10px #0ee0f7,
+                 0 0 20px #056ce1,
+                 0 0 35px  #d931ff;
+
+    position: relative;
+    z-index: 10;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Анимация градиента */
+@keyframes gradientPulse {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+
+.video-label h2 a:hover {
+     transform: translateY(15%);
+    text-shadow: 0 0 25px rgb(76, 112, 255),
+                 0 0 40px rgba(0, 55, 113, 0.9),
+                 0 0 55px rgba(0, 253, 194, 0.7);
+    background: linear-gradient(45deg, #1289ff, #11ffef);
+}
+.video-text {
+    position: absolute;
+    top: 20px;          /* Расположение сверху */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #fff;
+     font-family: 'Poppins', sans-serif;  /* красивый шрифт */
+    z-index: 4;
+}
+.video-text p{
+   font-family: 'Poppins', sans-serif;  /* красивый шрифт */
+}
+
+.video-text h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+.video-text p {
+    font-size: 1rem;
+    margin: 0;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+
+        .video-block {
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .video-block:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 133.33%; /* 3:4 aspect ratio for vertical videos */
+            background: #000;
+        }
+
+        .video-block video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .video-block:hover .video-text {
+            opacity: 0;
+        }
+
+        .play-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .play-indicator::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 0 10px 18px;
+            border-color: transparent transparent transparent #667eea;
+            margin-left: 4px;
+        }
+
+        .video-block:hover .play-indicator {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(1.3);
+        }
+
+        .video-label {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            color: white;
+            z-index: 2;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .video-label h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .video-label p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .video-block:hover .video-label {
+            transform: translateY(10px);
+        }
+
+        /* Mobile Responsive */
+       
+
+        .main-footer {
+    background: #111;                 /* Темный стильный фон */
+    padding: 50px 20px;
+    text-align: center;
+    color: white;
+    margin-top: 80px;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.footer-menu a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #dfe8ff;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease;
+    padding: 5px 8px;
+    border-radius: 8px;
+}
+
+.footer-menu a:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-3px);
+}
+
+.footer-copy {
+    font-size: 0.95rem;
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+}
+
+.footer-info {
+    display: flex;                /* Располагаем в ряд */
+    flex-wrap: wrap;              /* Перенос на новую строку, если не помещаются */
+    gap: 20px;                    /* Отступ между ссылками */
+    justify-content: center;      /* Выравнивание по центру */
+    padding: 20px;
+    background: #111;             /* Цвет фона футера */
+}
+
+.footer-info a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-info a:hover {
+    color: #ff416c;               /* Яркий цвет при наведении */
+    transform: scale(1.05);       /* Лёгкое увеличение */
+}
+
+
 
 @media (max-width: 767px) {
   .nav-bar {
@@ -220,5 +1129,200 @@ button {
 
   .hamburger {
     margin-left: auto;
+  }
+}
+
+ @media (max-width: 1024px) {
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .video-wrapper {
+                padding-bottom: 75%; /* 4:3 aspect ratio for mobile */
+            }
+        }
+@media (max-width: 480px) {
+    .slide {
+        min-width: 300px;
+    }
+    
+    /* .slider-container {
+        padding: 20px 45px 15px;
+    } */
+    
+    .arrow {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .arrow-left {
+        left: 5px;
+    }
+    
+    .arrow-right {
+        right: 5px;
+    }
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .slide {
+        min-width: 300px;
+    }
+    
+    /* .slider-container {
+        padding: 30px 60px 20px;
+    } */
+}
+
+@media (max-width: 768px) {
+    .slide {
+        min-width: 300px;
+    }
+    
+    /* .slider-container {
+        padding: 25px 50px 15px;
+    } */
+    
+    .arrow {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel-slide h1 a {
+        font-size: 1.4rem;      /* чуть меньше для маленьких экранов */
+        padding: 12px 20px;     /* уменьшаем зону, чтобы не обрезалось */
+    }
+}
+
+
+/* Tablets */
+@media (max-width: 900px) {
+    .carousel-slide h1 {
+        font-size: 32px;
+        padding: 10px 22px;
+        bottom: 16%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .carousel-slide h1 {
+        font-size: 26px;
+        padding: 8px 18px;
+        border-radius: 12px;
+        bottom: 14%;
+    }
+    .carousel-slide h1 a {
+        letter-spacing: 0.5px;
+    }
+}
+
+/* Small phones */
+/* Адаптивный текст */
+@media (max-width: 1024px) {
+    .carousel-slide h1 a {
+        font-size: 1.6rem;
+        padding: 12px 26px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-slide h1 a {
+        font-size: 1.4rem;
+        padding: 10px 22px;
+    }
+    .image-box2{
+      display: none;
+    }
+}
+
+@media (max-width: 420px) {
+    .carousel-slide h1 a {
+        font-size: 14px;
+        padding: 8px 18px;
+    }
+    .video-text h2{
+      font-size: 20px;
+    }
+    .video-text p {
+      font-size: 12px;
+    }
+    .video-text{
+      width: 90%;
+    }
+    .warn{
+      font-size: 10px;
+    }
+    .image-box2{
+      display: none;
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+  
+  .carousel-btn.prev {
+    left: 10px;
+  }
+  
+  .carousel-btn.next {
+    right: 10px;
+  }
+  
+  .carousel-caption {
+    font-size: 14px;
+    padding: 8px 15px;
+    bottom: 15px;
+    left: 15px;
+  }
+  
+  .carousel-indicator {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .carousel-indicator.active {
+    width: 24px;
+  }
+}
+
+.logoh{
+  display: none;
+}
+@media(max-width: 1055px){
+  .logoh{
+    display: block;
+  }
+  .logoh2{
+    display: none;
   }
 }
