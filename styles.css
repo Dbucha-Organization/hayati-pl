@@ -1142,6 +1142,9 @@ footer svg {
   transform: translateY(-50%);
   font-size: 12px;
 }
+.foot-cont-three p.active::after {
+  transform: translateY(-50%) rotate(180deg);
+}
 .foot-cont-three a {
   display: none;
 }
